@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script type="text/javascript" src="./js/my/Lei.js"></script>
+<script type="text/javascript" src="./js/my/lei-compile.js"></script>
+
+<body>
+    <div id="app">
+        <p>
+            姓名{{user.name}}性别{{user.sex}}岗位{{getJob()}}
+        </p>
+    </div>
+</body>
+<script>
+    var lei = new Lei({
+        el:'#app',
+        data:{
+            user:{
+                name:'leisuchu',
+                sex:'男'
+            }
+        },
+        methods:{
+            getJob(){
+                return 'program'
+            }
+        }
+    })
+</script>
+
+</html>

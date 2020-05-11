@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>流光效果按钮</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .div-container{
+        width: 100%;
+        height: calc(100vh);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+    }
+    a{
+        line-height: 100px;
+        text-align: center;
+        font-size: 30px;
+        width: 400px;
+        height: 100px;
+        background-color: white;
+        border-radius: 50px;
+        text-decoration: none;
+        color:white;
+        background: linear-gradient(90deg,#00a8db,#e907cb,#ffda06,#00a8db);
+        background-size: 400%;
+        position: relative;
+        z-index: 1;
+    }
+    a::before{
+        content: '';
+        position: absolute;
+        left: -5px;
+        right: -5px;
+        top: -5px;
+        bottom: -5px;
+        background: linear-gradient(90deg,#00a8db,#e907cb,#ffda06,#00a8db);
+        background-size: 400%;
+        border-radius: 55px;
+        filter: blur(20px);
+        z-index: -1;
+    }
+    a:hover{
+        animation: sun 8s infinite linear;
+    }
+    @keyframes sun {
+        100%{
+            background-position: -400% 0;
+        }
+    }
+    
+</style>
+<body>
+    <div class="div-container">
+        <a href="http://www.baidu.com">BUTTON</a>
+    </div>
+</body>
+</html>
